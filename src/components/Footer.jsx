@@ -8,8 +8,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    height: 150,
-    position: "absolute",
+    height: 50,
+    position: "fixed",
     bottom: 0,
     backgroundColor: "#3f51b5",
     display: "flex",

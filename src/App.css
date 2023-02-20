@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+/* Mobile First */
+
+/* Estilos para dispositivos móviles */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+/* Estilos para pantallas de 400px a 800px */
+@media (min-width: 400px) and (max-width: 800px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Estilos para pantallas de 801px a 1200px */
+@media (min-width: 801px) and (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Estilos para pantallas de 1201px a 1920px */
+@media (min-width: 1201px) and (max-width: 1920px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.product {
+  margin: 25px;
+  background-color: rgb(251, 250, 250);
+  padding: 10px;
+  border-radius: 1em;
+}
+
+.product img {
+  width: 100%;
+}
