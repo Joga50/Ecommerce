@@ -153,20 +153,50 @@ const Navbar = () => {
   return (
     <AppBar position="static">
       <Toolbar sx={{ backgroundColor: "#8e44ad", height: "70px" }}>
-        <Typography variant="h6" noWrap component={Link} to="/">
-          My Ecommerce
+        <Typography
+          variant="h6"
+          noWrap
+          component={Link}
+          to="/"
+          sx={{ margin: "5px", textDecoration: "none", color: "white" }}
+        >
+          My Photopedia
         </Typography>
         <NavbarContainer>
-          <Typography variant="h6" noWrap component={Link} to="/">
+          <Typography
+            sx={{ margin: "5px", textDecoration: "none", color: "white" }}
+            variant="h6"
+            noWrap
+            component={Link}
+            to="/"
+          >
             Home
           </Typography>
-          <Typography variant="h6" noWrap component={Link} to="/about">
+          <Typography
+            sx={{ margin: "5px", textDecoration: "none", color: "white" }}
+            variant="h6"
+            noWrap
+            component={Link}
+            to="/about"
+          >
             About
           </Typography>
-          <Typography variant="h6" noWrap component={Link} to="/products">
-            Products
+          <Typography
+            sx={{ margin: "5px", textDecoration: "none", color: "white" }}
+            variant="h6"
+            noWrap
+            component={Link}
+            to="/products"
+          >
+            All photos
           </Typography>
-          <Typography variant="h6" noWrap component={Link} to="/cart">
+          <Typography
+            sx={{ margin: "5px", textDecoration: "none", color: "white" }}
+            variant="h6"
+            noWrap
+            component={Link}
+            to="/cart"
+          >
             Cart
           </Typography>
         </NavbarContainer>

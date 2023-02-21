@@ -41,8 +41,27 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+  align-items: center;
+  text-align: center;
+}
+.pagination {
+  text-align: center;
+  display: flex;
+  width: auto;
+  margin: 5px;
 }
 
+.products-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* Mobile First */
 
 /* Estilos para dispositivos móviles */
