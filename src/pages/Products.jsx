@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import { useSelector } from "react-redux";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -13,6 +14,17 @@ function Products() {
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(15);
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const [themeClass, setThemeClass] = useState("");
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      setThemeClass("dark");
+    } else {
+      setThemeClass("");
+    }
+  }, [isDarkMode]);
 
   useEffect(() => {
     const API_KEY = "QWig25LIyukJPnbTBTMaJJf4suIEYM91EnuHqAtJbR2FC0pX5WKGONkD";
@@ -85,7 +97,7 @@ function Products() {
   }
 
   return (
-    <div className="products-container">
+    <div className={`products-container ${themeClass}`}>
       <FormControl sx={{ m: 1, minWidth: 120, marginTop: "60px" }}>
         <Select
           value={category}

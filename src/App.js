@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-
+import { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -10,14 +10,33 @@ import Navbar from "./components/NavBar";
 import Cart from "./pages/Cart";
 import ProductSingle from "./pages/ProductSingle";
 
+import { useDispatch, useSelector } from "react-redux";
+
+import { toggleDarkMode } from "./features/themeSlice";
+
 function App() {
+  const dispatch = useDispatch();
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+
+  const handleToggleDarkMode = () => {
+    dispatch(toggleDarkMode());
+  };
+
+  const [themeClass, setThemeClass] = useState("");
+
+  useEffect(() => {
+    if (isDarkMode) {
+      setThemeClass("dark");
+    } else {
+      setThemeClass("");
+    }
+  }, [isDarkMode]);
   return (
     <Router>
-      <div>
-        <Navbar />
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={handleToggleDarkMode} />
+      <div className={`products-container ${themeClass}`}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/" element={<Products />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ProductSingle />} />
