@@ -7,12 +7,12 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import About from "./pages/About";
 import Navbar from "./components/NavBar";
-import Cart from "./pages/Cart";
 import ProductSingle from "./pages/ProductSingle";
 
 import { useDispatch, useSelector } from "react-redux";
 
 import { toggleDarkMode } from "./features/themeSlice";
+import MyAlbum from "./pages/MyAlbum";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Products />} />
           <Route path="/about" element={<About />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/myalbum" element={<MyAlbum />} />
           <Route path="/product/:id" element={<ProductSingle />} />
         </Routes>
         <Footer />

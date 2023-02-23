@@ -108,7 +108,7 @@ const Navbar = () => {
             variant="h6"
             noWrap
             component={Link}
-            to="/cart"
+            to="/myalbum"
           >
             My Album
           </Typography>

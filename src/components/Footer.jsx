@@ -4,6 +4,7 @@ import { makeStyles } from "@mui/styles";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { PhotoAlbum } from "@mui/icons-material";
 
 const useStyles = makeStyles({
   root: {
@@ -27,6 +28,7 @@ const useStyles = makeStyles({
     color: "black",
     fontSize: 20,
     fontWeight: "bold",
+    margin: "10px",
   },
 });
 
@@ -36,9 +38,11 @@ function Footer() {
   return (
     <BottomNavigation
       className={classes.root}
-      style={{ backgroundColor: "#3f51b5" }}
+      style={{ backgroundColor: "#9370DB" }}
     >
-      <div className={classes.slogan}>Your Ecommerce Slogan Here</div>
+      <div className={classes.slogan}>
+        My Photopedia, Save your favorite pictures!
+      </div>
       <div>
         <BottomNavigationAction
           component={Link}
@@ -47,15 +51,17 @@ function Footer() {
           label="Home"
           showLabel={true}
           className={classes.action}
+          sx={{ m: "10px", p: "10px" }}
         />
 
         <BottomNavigationAction
           component={Link}
           to="/cart"
-          icon={<ShoppingCartIcon />}
-          label="My Cart"
+          icon={<PhotoAlbum />}
+          label="My Albúm"
           showLabel={true}
           className={classes.action}
+          sx={{ m: "10px", p: "10px" }}
         />
       </div>
     </BottomNavigation>
