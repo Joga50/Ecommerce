@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { PhotoAlbum } from "@mui/icons-material";
 
 const useStyles = makeStyles({
