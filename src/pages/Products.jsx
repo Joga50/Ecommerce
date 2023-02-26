@@ -115,19 +115,22 @@ function Products() {
       </FormControl>
       <div className="products-grid">
         {currentProducts.map((photo) => (
-          <Link
-            to={`/product/${photo.id}`}
-            key={photo.id}
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <Product
+          <div>
+            <Link
+              to={`/product/${photo.id}`}
               key={photo.id}
-              name={photo.alt}
-              imageUrl={photo.src.medium}
-              description={photo.photographer}
-              onClick={() => handleProductClick(photo)} // pasamos el manejador de eventos como props al componente Product
-            />
-          </Link>
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <Product
+                key={photo.id}
+                name={photo.alt}
+                imageUrl={photo.src.medium}
+                description={photo.photographer}
+                onClick={() => handleProductClick(photo)} // pasamos el manejador de eventos como props al componente Product
+              />
+            </Link>
+            <button>Add</button>
+          </div>
         ))}
       </div>
       <ul
