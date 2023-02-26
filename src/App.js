@@ -12,6 +12,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { toggleDarkMode } from "./features/themeSlice";
 import MyAlbum from "./pages/MyAlbum";
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import albumReducer from "./features/albumSlice";
+
+const albumStore = configureStore({
+  reducer: {
+    album: albumReducer,
+  },
+});
 
 function App() {
   const dispatch = useDispatch();
@@ -37,7 +46,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Products />} />
           <Route path="/about" element={<About />} />
+
           <Route path="/myalbum" element={<MyAlbum />} />
+
           <Route path="/product/:id" element={<ProductSingle />} />
         </Routes>
         <Footer />

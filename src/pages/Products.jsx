@@ -7,14 +7,15 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
+import { addImage } from "../features/albumSlice";
 function Products() {
   const [data, setData] = useState([]);
   const [category, setCategory] = useState("technology");
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(15);
   const [selectedProduct, setSelectedProduct] = useState(null);
-
+  const dispatch = useDispatch();
   const [themeClass, setThemeClass] = useState("");
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
 
@@ -95,7 +96,9 @@ function Products() {
   if (selectedProduct) {
     return <ProductSingle product={selectedProduct} />;
   }
-
+  const handleAddToAlbum = (photo) => {
+    dispatch(addImage(photo));
+  };
   return (
     <div className={`products-container ${themeClass}`}>
       <FormControl sx={{ m: 1, minWidth: 120, marginTop: "60px" }}>
@@ -129,7 +132,9 @@ function Products() {
                 onClick={() => handleProductClick(photo)} // pasamos el manejador de eventos como props al componente Product
               />
             </Link>
-            <button>Add</button>
+            <button onClick={() => handleAddToAlbum(photo)}>
+              Add to Album
+            </button>
           </div>
         ))}
       </div>
