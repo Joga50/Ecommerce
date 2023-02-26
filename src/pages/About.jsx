@@ -9,19 +9,25 @@ const useStyles = makeStyles({
     alignItems: "center",
     textAlign: "center",
     height: "100%",
-    backgroundImage: "url(https://picsum.photos/1920/1080?grayscale)",
+    position: "fixed",
+    top: "0",
+    left: "0",
+    width: "100%",
+    backgroundImage:
+      "url(https://4kwallpapers.com/images/wallpapers/dslr-camera-zoom-lens-fog-5k-3840x2160-411.jpg)",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "top right",
-    backgroundSize: "50%",
-    padding: "50px 0",
+    backgroundPosition: "center",
+    backgroundSize: "100%",
+
+    zIndex: "-15",
   },
   aboutTitle: {
-    fontSize: "48px",
+    fontSize: "40px",
     fontWeight: "bold",
     marginBottom: "20px",
   },
   aboutText: {
-    fontSize: "24px",
+    fontSize: "20px",
     lineHeight: "1.5",
   },
 });

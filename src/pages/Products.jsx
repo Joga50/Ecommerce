@@ -132,7 +132,18 @@ function Products() {
                 onClick={() => handleProductClick(photo)} // pasamos el manejador de eventos como props al componente Product
               />
             </Link>
-            <button onClick={() => handleAddToAlbum(photo)}>
+            <button
+              style={{
+                backgroundColor: "#007bff",
+                border: "none",
+                color: "#fff",
+                padding: "10px 20px",
+                borderRadius: "5px",
+                cursor: "pointer",
+              }}
+              onClick={() => handleAddToAlbum(photo)}
+            >
+              {" "}
               Add to Album
             </button>
           </div>
